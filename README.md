@@ -9,7 +9,7 @@ This plugin is highly been developed and updated. As long as there's **Laravel**
 ## Project Pipe lines
 
 - [ ] Support for automatic setup with MySQL
-- [ ] Support for protected property $tableName 
+- [x] Support for protected property $tableName
 - [ ] Support to export files to specified directory
 - [ ] Support for one to many relationship
 - [ ] Support for many to many rekationship
