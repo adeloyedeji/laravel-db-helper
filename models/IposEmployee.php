@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class IposEmployee extends Model {
+	protected $table = 'ipos_employees';
 	protected $fillable = [
 		'username', 
 		'password', 

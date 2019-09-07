@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class IposSalesTax extends Model {
+	protected $table = 'ipos_sales_taxes';
 	protected $fillable = [
 		'sale_id', 
 		'tax_type', 

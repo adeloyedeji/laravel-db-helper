@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class IposItem extends Model {
+	protected $table = 'ipos_items';
 	protected $fillable = [
 		'name', 
 		'category', 

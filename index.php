@@ -38,7 +38,7 @@ if (count($result) > 0)
                 $laravelModelName = Inflector::singularize(str_replace(" ", "", ucwords(str_replace("_", " ", $v))));
                 
                 // create the file content
-                $modelFileContent = $obj->writeFileOpeningProperties($laravelModelName);
+                $modelFileContent = $obj->writeFileOpeningProperties($laravelModelName, $v);
                 foreach($columns as $c => $v)
                 {
                     $modelFileContent .= "\t\t'" . $v['Field'] . "', \n";

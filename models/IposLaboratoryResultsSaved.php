@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class IposLaboratoryResultsSaved extends Model {
+	protected $table = 'ipos_laboratory_results_saved';
 	protected $fillable = [
 		'sale_id', 
 		'item_id', 

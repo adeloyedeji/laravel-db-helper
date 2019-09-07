@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class IposItemTransfer extends Model {
+	protected $table = 'ipos_item_transfer';
 	protected $fillable = [
 		'transfer_id', 
 		'transfer_time', 

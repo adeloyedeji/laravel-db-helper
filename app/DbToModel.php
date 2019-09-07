@@ -21,9 +21,7 @@ class DbToModel {
         $this->init->setDbName($dbName);
         $dbHandle = $this->init->connect($this->init->getServerName(), $this->init->getUserName(), $this->init->getPassword(), $this->init->getDbName());
         $this->init->setDbHandle($dbHandle);
-        if ($this->init->getDbHandle() instanceof \PDO) {
-            // db connection was successful.
-        } else {
+        if (!$this->init->getDbHandle() instanceof \PDO) {
             echo "Db Connection failed!\n";
             exit;
         }
@@ -47,12 +45,14 @@ class DbToModel {
         return $result;
     }
 
-    public function writeFileOpeningProperties(string $className) : string {
+    public function writeFileOpeningProperties(string $className, string $tableName) : string {
         $fillable = '$fillable';
+        $table = '$table';
         $properties = "<?php\n\n";
         $properties .= "namespace App;\n\n";
         $properties .= "use Illuminate\Database\Eloquent\Model;\n\n";
         $properties .= "class $className extends Model {\n";
+        $properties .= "\tprotected $table = '" . $tableName . "';\n";
         $properties .= "\tprotected $fillable = [\n";
         return $properties;
     }
