@@ -12,7 +12,7 @@ This plugin is highly been developed and updated. As long as there's **Laravel**
 - [ ] Support for protected property $tableName 
 - [ ] Support to export files to specified directory
 - [ ] Support for one to many relationship
-- [ ] Support for many to many rekationship
+- [ ] Support for many to many relationship
 - [ ] Support for multiple database systems
 
 ## Setup
