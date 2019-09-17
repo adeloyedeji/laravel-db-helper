@@ -6,7 +6,7 @@ require __DIR__ . '/vendor/autoload.php';
 use App\DbToModel;
 use App\setup\Inflector;
 
-$obj = new DbToModel("localhost", "root", "", "ipos_current");
+$obj = new DbToModel("localhost", "root", "", "testdb");
 
 $result = $obj->getDatabaseTables();
 
