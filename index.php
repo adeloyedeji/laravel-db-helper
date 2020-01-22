@@ -14,7 +14,7 @@ $host = isset(getopt(null, ["host:"])['host'])? getopt(null, ["host:"])['host'] 
 
 $username = isset(getopt(null, ["username:"])['username'])? getopt(null, ["username:"])['username'] : NULL;
 
-$path = isset(getopt(null, ["path:"])['path'])? getopt(null, ["path:"])['path']: NULL;
+$path = isset(getopt(null, ["path:"])['path'])? getopt(null, ["path:"])['path']: ".";
 
 
 $welcomeNote  = "********************************************\n";
@@ -69,7 +69,8 @@ if (count($result) > 0)
             }
             rmdir(__DIR__.$dir);
         }
-        mkdir("models", 0777, true);
+        $dir = $path . "/models";
+        mkdir($dir, 0777, true);
         foreach ($result as $r)
         {
             foreach($r as $o => $v)
@@ -89,7 +90,7 @@ if (count($result) > 0)
                     $modelFileContent .= $obj->writeFileClosingProperties();
 
                     // write the file content to folder models.
-                    if (file_put_contents("models/$laravelModelName.php", $modelFileContent) !== false)
+                    if (file_put_contents($dir."/".$laravelModelName.".php", $modelFileContent) !== false)
                     {
                         echo "Model: $laravelModelName was successfully created.\n";
                     }
@@ -121,7 +122,8 @@ if (count($result) > 0)
             }
             rmdir(__DIR__.$dir);
         }
-        mkdir("seeders", 0777, true);
+        $dir = $path . "/seeders";
+        mkdir($dir, 0777, true);
 
         foreach ($result as $table)
         {
@@ -153,7 +155,7 @@ if (count($result) > 0)
                     
                     }  
                     if($content != "")$content = $obj->writeSeederProperties($tableName,$content);
-                    if (file_put_contents("seeders/".$tableName."TableSeeder.php", $content) !== false)
+                    if (file_put_contents($dir."/".$tableName."TableSeeder.php", $content) !== false)
                     {
                         echo "Seeders: ".$tableName. "TableSeeder was successfully created.\n";
                     }
