@@ -20,15 +20,17 @@ This plugin is highly been developed and updated. As long as there's **Laravel**
 1. Clone a copy of this repository
 2. Run the index.php file on **CLI** with all the neccesary arguments
 
+## Example Usage
+
 **php index.php --database=myDBName --username=root --password=pass123 --host=localhost** 
 **--path=C://users/username/laravel -seeder -model**
 
 ## Arguments
-# --database  Name of database [required] 
-# --username  Setting up database username [required]
-# --host      database host [default: localhost] 
-# --password  Database password [default: ]
-# --path      Path to store DB result [default: current-directory ]
-# -model      For generating models from Database
-# -seeder     For generating database seeders from Database
-# -help       To display this menu
+database  Name of database [required] 
+username  Setting up database username [required]
+host      database host [default: localhost] 
+password  Database password [default: ]
+path      Path to store DB result [default: current-directory ]
+model      For generating models from Database
+seeder     For generating database seeders from Database
+help       To display this menu
