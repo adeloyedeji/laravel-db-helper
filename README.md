@@ -24,11 +24,11 @@ This plugin is highly been developed and updated. As long as there's **Laravel**
 **--path=C://users/username/laravel -seeder -model**
 
 ## Arguments
-. --database  Name of database [required] 
-. --username  Setting up database username [required]
-. --host      database host [default: localhost] 
-. --password  Database password [default: ]
-. --path      Path to store DB result [default: current-directory ]
-. -model      For generating models from Database
-. -seeder     For generating database seeders from Database
-. -help       To display this menu
+# --database  Name of database [required] 
+# --username  Setting up database username [required]
+# --host      database host [default: localhost] 
+# --password  Database password [default: ]
+# --path      Path to store DB result [default: current-directory ]
+# -model      For generating models from Database
+# -seeder     For generating database seeders from Database
+# -help       To display this menu
