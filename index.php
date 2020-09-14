@@ -52,6 +52,7 @@ $obj = new DbManager($host, $username, $password, $database);
 
 $result = $obj->getDatabaseTables();
 
+
 if (count($result) > 0)
 {
     if($val['m'] == "odel") {
@@ -163,6 +164,160 @@ if (count($result) > 0)
                     {
                         echo "Unable to create model: $laravelModelName.\n";
                     }             
+                }
+            }
+        }
+    }
+
+    if($val['m'] == "igrations") {
+        if (is_dir(__DIR__."migrations"))
+        {
+            $dir = 'migrations';
+            $it = new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS);
+            $files = new RecursiveIteratorIterator($it, RecursiveIteratorIterator::CHILD_FIRST);
+            foreach($files as $file) {
+                if ($file->isDir()) {
+                    rmdir($file->getRealPath());
+                } else {
+                    unlink($file->getRealPath());
+                }
+            }
+            rmdir(__DIR__.$dir);
+        }
+        $dir = $path . "/migrations";
+        mkdir($dir, 0777, true);
+        foreach ($result as $r)
+        {
+         
+            foreach($r as $o => $v)
+            {
+                
+                
+             
+                $columns = $obj->getColumnsInTable($v);
+
+                               
+                if (count($columns) > 0)
+                {
+                    $time = time();
+                    $date = date("Y_m_d",time());
+                    $time = $time % 10000;
+
+                   
+
+                    
+                    $migrationFileName = "{$date}_{$time}_create_{$v}_table.php";
+                    
+                    $className = "Create".str_replace(" ", "", ucwords(str_replace("_", " ", $v)))."Table";
+
+                    
+                    $upContents = "";
+                    $upContents .= "\t\tSchema::create('{$v}', function (Blueprint \$table) {\n";
+                    
+                    $hasTimeStamp = false;
+                    foreach($columns as $column) {
+                        $field = $column["Field"];
+                        $type = $column["Type"];
+                        $nullable = $column["Null"];
+                        $key = $column["Key"];
+                        $defaultValue = $column["Default"];
+                        $extra = $column["Extra"];
+
+                        
+                        $columnString = "\t\t\t\$table";
+                        if($field == "id") {
+                            $columnString .= "->id()";
+                        }elseif($field == "created_at" || $field == "updated_at"){
+                            if(!$hasTimeStamp){
+                                $columnString .= "->timestamp()";
+                                $hasTimeStamp =true;
+                            }else {
+                              
+                                continue;
+                            }
+                            
+                           
+                        }else {
+                            
+                            if(strpos($type,"bigint") !== false) {
+                                $columnString .= "->bigInteger('{$field}')";
+                               
+                            }elseif(strpos($type,"mediumint") !== false) {
+                                $columnString .= "->mediumInteger('{$field}')";
+                            }elseif(strpos($type,"varchar") !== false) {
+                                $columnString .= "->string('{$field}')";
+                            }elseif(strpos($type,"longtext") !== false) {
+                                $columnString .= "->longText('{$field}')";
+                            }elseif(strpos($type,"smallint") !== false) {
+                                $columnString .= "->smallInteger('{$field}')";
+                            }elseif(strpos($type,"tinyint") !== false) {
+                                $columnString .= "->tinyInteger('{$field}')";
+                            }elseif(strpos($type,"timestamp") !== false) {
+                                $columnString .= "->timestamp('{$field}')";
+                            }elseif(strpos($type,"time") !== false) {
+                                $columnString .= "->time('{$field}')";
+                            }elseif(strpos($type,"mediumtext") !== false) {
+                                $columnString .= "->mediumText('{$field}')";
+                            }elseif(strpos($type,"text") !== false) {
+                                $columnString .= "->text('{$field}')";
+                            }elseif(strpos($type,"int") !== false) {
+                                $columnString .= "->integer('{$field}')";
+                            }elseif(strpos($type,"boolean") !== false){
+                                $columnString .= "->boolean('{$field}')";
+                            }elseif(strpos($type,"char") !== false){
+                                $columnString .= "->char('{$field}')";
+                            }elseif(strpos($type,"double") !== false) {
+                                $columnString .= "->double('{$field}')";
+                            }elseif(strpos($type,"float") !== false) {
+                                $columnString .= "->float('{$field}')";
+                            }elseif(strpos($type,"blob") !== false) {
+                                $columnString .= "->binary('{$field}')";
+                            }elseif(strpos($type,"date") !== false) {
+                                $columnString .= "->date('{$field}')";
+                            }elseif(strpos($type,"decimal") !== false) {
+                                $columnString .= "->decimal('{$field}')";
+                            }else {
+                                throw new Exception("unknow type {$type}");
+                            }
+
+                            if(strpos($type,"unsigned") !== false) {
+                                $columnString .= "->unsigned()";
+                            }
+                           
+                            if($nullable == "YES" || $nullable == "yes") {
+                                $columnString .= "->nullable()";
+                            }
+
+                            if(strlen($defaultValue) > 0 ) {
+                                $columnString .= "->default({$defaultValue})";
+                            }
+                        }
+
+                        $columnString .= ";\n";
+
+                       $upContents .= $columnString;
+                       
+                        
+                    }
+                    $upContents .= "\t\t});\n";
+
+                  
+                    $downContenet = "\t\tSchema::dropIfExists('{$v}');\n";
+                    
+                    // create the file content
+                    $migrationFileContent = $obj->writeMigrationsProperties($upContents,$className,$downContenet);
+
+                   
+                    // write the file content to folder migrations.
+
+                    if (file_put_contents($dir."/".$migrationFileName, $migrationFileContent) !== false)
+                    {
+                        echo "Migration: $migrationFileName was successfully created.\n";
+                    }
+                    else 
+                    {
+                        echo "Unable to create migration: $migrationFileName.\n";
+                    }
                 }
             }
         }

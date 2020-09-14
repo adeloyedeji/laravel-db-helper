@@ -86,4 +86,22 @@ class DbManager {
         return $properties;
 
     }
+
+    public function writeMigrationsProperties(string $upContent,string $className,string $downContent) {
+        $properties = "<?php\n\n";
+        $properties .= "use Illuminate\Database\Migrations\Migration;\n";
+        $properties .= "use Illuminate\Database\Schema\Blueprint;\n";
+        $properties .= "use Illuminate\Support\Facades\Schema;\n\n";
+        $properties .= "class {$className} extends Migration\n{\n";
+        $properties .= "\t/**\n\t* Run the migrations.\n\t*\n\t* @return void\n\t*/\n";
+        $properties .= "\tpublic function up()\n\t{\n";
+        $properties .= $upContent;
+        $properties .= "\t}\n\n";
+        $properties .= "\t/**\n\t* Reverse the migrations.\n\t*\n\t* @return void\n\t*/\n";
+        $properties .= "\tpublic function down()\n\t{\n";
+        $properties .= $downContent;
+        $properties .= "\t}\n}";
+
+        return $properties;
+    }
 }
