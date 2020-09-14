@@ -11,6 +11,7 @@ This plugin is highly been developed and updated. As long as there's **Laravel**
 - [ ] Support for automatic setup with MySQL
 - [x] Support for protected property $tableName
 - [x] Support to export files to specified directory
+- [x] Support for generating migrations from database
 - [ ] Support for one to many relationship
 - [ ] Support for many to many relationship
 - [ ] Support for multiple database systems
@@ -23,7 +24,7 @@ This plugin is highly been developed and updated. As long as there's **Laravel**
 ## Example Usage
 
 **php index.php --database=myDBName --username=root --password=pass123 --host=localhost** 
-**--path=C://users/username/laravel -seeder -model**
+**--path=C://users/username/laravel -seeder -model -migration**
 
 ## Arguments
 --database    -->   Name of database [required] 
@@ -39,5 +40,7 @@ This plugin is highly been developed and updated. As long as there's **Laravel**
 -model        -->   For generating models from Database
 
 -seeder       -->   For generating database seeders from Database
+
+-migration    -->   For generating migrations file from Database
 
 help          -->   To display this menu

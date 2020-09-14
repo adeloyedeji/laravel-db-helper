@@ -4,7 +4,7 @@ require __DIR__ . '/vendor/autoload.php';
 use App\DbManager;
 use App\setup\Inflector;
 
-$val = getopt("s:m:h:");
+$val = getopt("s:m:h");
 
 $database = isset(getopt(null, ["database:"])['database'])? getopt(null, ["database:"])['database'] : NULL;
 
@@ -28,6 +28,7 @@ $welcomeNote .= " --password \tDatabase password [default: ]\n\n";
 $welcomeNote .= " --path \tPath to store DB result [default: current-directory ]\n\n";
 $welcomeNote .= " -model \tFor generating models from Database\n\n";
 $welcomeNote .= " -seeder \tFor generating database seeders from Database\n\n";
+$welcomeNote .= " -migration \tFor generating database migration from Database\n\n";
 $welcomeNote .= " -help \t\tTo display this menu\n\n";
 
 $welcomeNote .= "********************************************\n";
@@ -55,7 +56,7 @@ $result = $obj->getDatabaseTables();
 
 if (count($result) > 0)
 {
-    if($val['m'] == "odel") {
+    if($val['m'] == "odels") {
         if (is_dir(__DIR__."models"))
         {
             $dir = 'models';
@@ -107,7 +108,7 @@ if (count($result) > 0)
 
 
    
-    if($val['s'] == "eeder") {
+    if($val['s'] == "eeders") {
         //generate seeders;
         if (is_dir(__DIR__."seeders"))
         {
@@ -202,6 +203,8 @@ if (count($result) > 0)
                     $time = time();
                     $date = date("Y_m_d",time());
                     $time = $time % 10000;
+
+                    $time += rand(1,1000);
 
                    
 
