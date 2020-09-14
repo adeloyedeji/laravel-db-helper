@@ -204,8 +204,6 @@ if (count($result) > 0)
                     $date = date("Y_m_d",time());
                     $time = $time % 10000;
 
-                    $time += rand(1,1000);
-
                    
 
                     
