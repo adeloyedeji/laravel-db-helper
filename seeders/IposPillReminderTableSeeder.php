@@ -119,7 +119,7 @@ class IposPillReminderTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposPillReminder')->insert($row);
+			\DB::table('IposPillReminder')->insert($row);
 		}
 	}
 }

@@ -56,7 +56,7 @@ class HmosTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Hmos')->insert($row);
+			\DB::table('Hmos')->insert($row);
 		}
 	}
 }

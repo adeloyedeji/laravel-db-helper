@@ -91,7 +91,7 @@ class PricesTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Prices')->insert($row);
+			\DB::table('Prices')->insert($row);
 		}
 	}
 }

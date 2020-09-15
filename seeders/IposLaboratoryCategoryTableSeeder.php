@@ -32,7 +32,7 @@ class IposLaboratoryCategoryTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposLaboratoryCategory')->insert($row);
+			\DB::table('IposLaboratoryCategory')->insert($row);
 		}
 	}
 }

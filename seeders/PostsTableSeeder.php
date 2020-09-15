@@ -81,7 +81,7 @@ class PostsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Posts')->insert($row);
+			\DB::table('Posts')->insert($row);
 		}
 	}
 }

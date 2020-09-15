@@ -38,7 +38,7 @@ class SiteSettingsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('SiteSettings')->insert($row);
+			\DB::table('SiteSettings')->insert($row);
 		}
 	}
 }

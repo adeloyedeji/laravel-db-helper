@@ -95,7 +95,7 @@ class BlogsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Blogs')->insert($row);
+			\DB::table('Blogs')->insert($row);
 		}
 	}
 }

@@ -3049,7 +3049,7 @@ class IposGrantsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposGrants')->insert($row);
+			\DB::table('IposGrants')->insert($row);
 		}
 	}
 }

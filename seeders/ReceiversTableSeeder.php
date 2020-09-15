@@ -71,7 +71,7 @@ class ReceiversTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Receivers')->insert($row);
+			\DB::table('Receivers')->insert($row);
 		}
 	}
 }

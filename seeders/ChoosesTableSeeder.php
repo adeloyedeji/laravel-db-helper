@@ -71,7 +71,7 @@ class ChoosesTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Chooses')->insert($row);
+			\DB::table('Chooses')->insert($row);
 		}
 	}
 }

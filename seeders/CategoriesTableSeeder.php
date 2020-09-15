@@ -83,7 +83,7 @@ class CategoriesTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Categories')->insert($row);
+			\DB::table('Categories')->insert($row);
 		}
 	}
 }

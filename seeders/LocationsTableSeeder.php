@@ -272,7 +272,7 @@ class LocationsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Locations')->insert($row);
+			\DB::table('Locations')->insert($row);
 		}
 	}
 }

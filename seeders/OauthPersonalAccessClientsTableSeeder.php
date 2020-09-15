@@ -19,7 +19,7 @@ class OauthPersonalAccessClientsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('OauthPersonalAccessClients')->insert($row);
+			\DB::table('OauthPersonalAccessClients')->insert($row);
 		}
 	}
 }

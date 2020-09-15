@@ -470,7 +470,7 @@ class ProductCategoriesTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('ProductCategories')->insert($row);
+			\DB::table('ProductCategories')->insert($row);
 		}
 	}
 }

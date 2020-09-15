@@ -172,7 +172,7 @@ class MigrationsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Migrations')->insert($row);
+			\DB::table('Migrations')->insert($row);
 		}
 	}
 }

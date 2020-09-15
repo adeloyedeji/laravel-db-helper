@@ -82,7 +82,7 @@ class DbManager {
         $properties .= $content."\n";
         $properties .= "\t\t];\n";
         $properties .= "\t\tforeach (\$rows as \$row) {\n";
-        $properties .= "\t\t\tDB::table('".$tableName."')->insert(\$row);\n";
+        $properties .= "\t\t\t\\DB::table('".$tableName."')->insert(\$row);\n";
         $properties .= "\t\t}\n\t}\n}";
         return $properties;
 

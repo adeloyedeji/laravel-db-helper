@@ -1001,7 +1001,7 @@ class OrdersTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Orders')->insert($row);
+			\DB::table('Orders')->insert($row);
 		}
 	}
 }

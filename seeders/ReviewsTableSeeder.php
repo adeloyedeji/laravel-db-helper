@@ -81,7 +81,7 @@ class ReviewsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Reviews')->insert($row);
+			\DB::table('Reviews')->insert($row);
 		}
 	}
 }

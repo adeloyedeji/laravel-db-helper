@@ -1199,7 +1199,7 @@ class IposItemTransferTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposItemTransfer')->insert($row);
+			\DB::table('IposItemTransfer')->insert($row);
 		}
 	}
 }

@@ -91,7 +91,7 @@ class NewsLikesTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('NewsLikes')->insert($row);
+			\DB::table('NewsLikes')->insert($row);
 		}
 	}
 }

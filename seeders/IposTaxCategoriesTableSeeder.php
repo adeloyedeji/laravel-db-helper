@@ -32,7 +32,7 @@ class IposTaxCategoriesTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposTaxCategories')->insert($row);
+			\DB::table('IposTaxCategories')->insert($row);
 		}
 	}
 }

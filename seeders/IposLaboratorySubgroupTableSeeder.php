@@ -214,7 +214,7 @@ class IposLaboratorySubgroupTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposLaboratorySubgroup')->insert($row);
+			\DB::table('IposLaboratorySubgroup')->insert($row);
 		}
 	}
 }

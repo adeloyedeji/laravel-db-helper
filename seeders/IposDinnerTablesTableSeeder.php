@@ -27,7 +27,7 @@ class IposDinnerTablesTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposDinnerTables')->insert($row);
+			\DB::table('IposDinnerTables')->insert($row);
 		}
 	}
 }

@@ -171,7 +171,7 @@ class SubCategoriesTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('SubCategories')->insert($row);
+			\DB::table('SubCategories')->insert($row);
 		}
 	}
 }

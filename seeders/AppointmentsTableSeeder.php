@@ -37,7 +37,7 @@ class AppointmentsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Appointments')->insert($row);
+			\DB::table('Appointments')->insert($row);
 		}
 	}
 }

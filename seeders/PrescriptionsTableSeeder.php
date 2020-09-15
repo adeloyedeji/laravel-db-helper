@@ -77,7 +77,7 @@ Donatus street, Off RCC Road, Benin-Agbor Road, Benin City, Edo State',
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Prescriptions')->insert($row);
+			\DB::table('Prescriptions')->insert($row);
 		}
 	}
 }

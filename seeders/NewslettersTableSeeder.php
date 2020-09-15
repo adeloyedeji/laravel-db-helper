@@ -35,7 +35,7 @@ class NewslettersTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Newsletters')->insert($row);
+			\DB::table('Newsletters')->insert($row);
 		}
 	}
 }

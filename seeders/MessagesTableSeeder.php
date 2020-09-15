@@ -89,7 +89,7 @@ class MessagesTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Messages')->insert($row);
+			\DB::table('Messages')->insert($row);
 		}
 	}
 }

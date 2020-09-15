@@ -623,7 +623,7 @@ class IposAppConfigTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposAppConfig')->insert($row);
+			\DB::table('IposAppConfig')->insert($row);
 		}
 	}
 }

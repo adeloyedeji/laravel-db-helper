@@ -153051,7 +153051,7 @@ class IposSalesPaymentsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposSalesPayments')->insert($row);
+			\DB::table('IposSalesPayments')->insert($row);
 		}
 	}
 }

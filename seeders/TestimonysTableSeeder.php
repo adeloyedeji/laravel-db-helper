@@ -55,7 +55,7 @@ class TestimonysTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Testimonys')->insert($row);
+			\DB::table('Testimonys')->insert($row);
 		}
 	}
 }

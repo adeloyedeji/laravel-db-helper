@@ -31,7 +31,7 @@ class PartnerHospitalsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('PartnerHospitals')->insert($row);
+			\DB::table('PartnerHospitals')->insert($row);
 		}
 	}
 }

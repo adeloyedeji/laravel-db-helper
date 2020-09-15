@@ -31,7 +31,7 @@ class RolesTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Roles')->insert($row);
+			\DB::table('Roles')->insert($row);
 		}
 	}
 }

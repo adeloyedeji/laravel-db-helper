@@ -298,7 +298,7 @@ class IposRolesTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposRoles')->insert($row);
+			\DB::table('IposRoles')->insert($row);
 		}
 	}
 }

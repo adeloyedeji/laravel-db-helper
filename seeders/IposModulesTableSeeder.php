@@ -146,7 +146,7 @@ class IposModulesTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposModules')->insert($row);
+			\DB::table('IposModules')->insert($row);
 		}
 	}
 }

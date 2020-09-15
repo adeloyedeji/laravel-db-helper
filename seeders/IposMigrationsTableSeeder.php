@@ -16,7 +16,7 @@ class IposMigrationsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposMigrations')->insert($row);
+			\DB::table('IposMigrations')->insert($row);
 		}
 	}
 }

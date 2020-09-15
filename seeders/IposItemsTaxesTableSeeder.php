@@ -25,7 +25,7 @@ class IposItemsTaxesTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposItemsTaxes')->insert($row);
+			\DB::table('IposItemsTaxes')->insert($row);
 		}
 	}
 }

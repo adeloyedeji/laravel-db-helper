@@ -14655,7 +14655,7 @@ class IposCustomersTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposCustomers')->insert($row);
+			\DB::table('IposCustomers')->insert($row);
 		}
 	}
 }

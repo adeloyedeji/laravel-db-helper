@@ -91,7 +91,7 @@ class GalleriesTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Galleries')->insert($row);
+			\DB::table('Galleries')->insert($row);
 		}
 	}
 }

@@ -4451,7 +4451,7 @@ class IposItemsPushTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposItemsPush')->insert($row);
+			\DB::table('IposItemsPush')->insert($row);
 		}
 	}
 }

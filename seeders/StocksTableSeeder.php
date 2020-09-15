@@ -38,7 +38,7 @@ class StocksTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Stocks')->insert($row);
+			\DB::table('Stocks')->insert($row);
 		}
 	}
 }

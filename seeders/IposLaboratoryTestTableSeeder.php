@@ -2819,7 +2819,7 @@ class IposLaboratoryTestTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposLaboratoryTest')->insert($row);
+			\DB::table('IposLaboratoryTest')->insert($row);
 		}
 	}
 }

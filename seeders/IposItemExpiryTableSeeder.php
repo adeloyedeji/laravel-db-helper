@@ -32741,7 +32741,7 @@ class IposItemExpiryTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposItemExpiry')->insert($row);
+			\DB::table('IposItemExpiry')->insert($row);
 		}
 	}
 }

@@ -83,7 +83,7 @@ class IposRoleIdTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposRoleId')->insert($row);
+			\DB::table('IposRoleId')->insert($row);
 		}
 	}
 }

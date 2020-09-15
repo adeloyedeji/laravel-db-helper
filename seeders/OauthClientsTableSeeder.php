@@ -39,7 +39,7 @@ class OauthClientsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('OauthClients')->insert($row);
+			\DB::table('OauthClients')->insert($row);
 		}
 	}
 }

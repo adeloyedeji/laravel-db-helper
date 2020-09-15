@@ -55,7 +55,7 @@ class CommentsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Comments')->insert($row);
+			\DB::table('Comments')->insert($row);
 		}
 	}
 }

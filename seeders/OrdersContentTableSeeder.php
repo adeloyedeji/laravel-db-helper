@@ -492,7 +492,7 @@ class OrdersContentTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('OrdersContent')->insert($row);
+			\DB::table('OrdersContent')->insert($row);
 		}
 	}
 }

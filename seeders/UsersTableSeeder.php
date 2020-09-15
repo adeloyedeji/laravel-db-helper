@@ -1265,7 +1265,7 @@ class UsersTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Users')->insert($row);
+			\DB::table('Users')->insert($row);
 		}
 	}
 }

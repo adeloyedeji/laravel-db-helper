@@ -81,7 +81,7 @@ class WalletsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Wallets')->insert($row);
+			\DB::table('Wallets')->insert($row);
 		}
 	}
 }

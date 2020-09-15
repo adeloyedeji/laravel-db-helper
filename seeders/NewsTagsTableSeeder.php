@@ -101,7 +101,7 @@ class NewsTagsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('NewsTags')->insert($row);
+			\DB::table('NewsTags')->insert($row);
 		}
 	}
 }

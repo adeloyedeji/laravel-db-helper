@@ -171,7 +171,7 @@ class PharmacistsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Pharmacists')->insert($row);
+			\DB::table('Pharmacists')->insert($row);
 		}
 	}
 }

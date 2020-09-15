@@ -848,7 +848,7 @@ class UserPillremindersTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('UserPillreminders')->insert($row);
+			\DB::table('UserPillreminders')->insert($row);
 		}
 	}
 }

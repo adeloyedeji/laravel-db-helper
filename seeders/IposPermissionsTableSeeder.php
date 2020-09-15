@@ -284,7 +284,7 @@ class IposPermissionsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposPermissions')->insert($row);
+			\DB::table('IposPermissions')->insert($row);
 		}
 	}
 }

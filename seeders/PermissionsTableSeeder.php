@@ -69,7 +69,7 @@ class PermissionsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Permissions')->insert($row);
+			\DB::table('Permissions')->insert($row);
 		}
 	}
 }

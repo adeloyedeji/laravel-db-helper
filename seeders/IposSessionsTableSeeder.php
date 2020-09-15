@@ -1075,7 +1075,7 @@ class IposSessionsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposSessions')->insert($row);
+			\DB::table('IposSessions')->insert($row);
 		}
 	}
 }

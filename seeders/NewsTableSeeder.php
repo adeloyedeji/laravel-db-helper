@@ -59,7 +59,7 @@ class NewsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('News')->insert($row);
+			\DB::table('News')->insert($row);
 		}
 	}
 }

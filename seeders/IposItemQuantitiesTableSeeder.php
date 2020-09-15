@@ -149843,7 +149843,7 @@ class IposItemQuantitiesTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposItemQuantities')->insert($row);
+			\DB::table('IposItemQuantities')->insert($row);
 		}
 	}
 }

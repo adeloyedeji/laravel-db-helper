@@ -2231,7 +2231,7 @@ class IposOpenRegisterTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposOpenRegister')->insert($row);
+			\DB::table('IposOpenRegister')->insert($row);
 		}
 	}
 }

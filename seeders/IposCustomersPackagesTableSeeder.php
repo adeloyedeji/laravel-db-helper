@@ -51,7 +51,7 @@ class IposCustomersPackagesTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposCustomersPackages')->insert($row);
+			\DB::table('IposCustomersPackages')->insert($row);
 		}
 	}
 }

@@ -109131,7 +109131,7 @@ class IposReceivingsItemsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposReceivingsItems')->insert($row);
+			\DB::table('IposReceivingsItems')->insert($row);
 		}
 	}
 }

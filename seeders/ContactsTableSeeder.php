@@ -55,7 +55,7 @@ class ContactsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Contacts')->insert($row);
+			\DB::table('Contacts')->insert($row);
 		}
 	}
 }

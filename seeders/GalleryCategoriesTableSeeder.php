@@ -43,7 +43,7 @@ class GalleryCategoriesTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('GalleryCategories')->insert($row);
+			\DB::table('GalleryCategories')->insert($row);
 		}
 	}
 }

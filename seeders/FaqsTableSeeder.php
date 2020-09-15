@@ -81,7 +81,7 @@ class FaqsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Faqs')->insert($row);
+			\DB::table('Faqs')->insert($row);
 		}
 	}
 }

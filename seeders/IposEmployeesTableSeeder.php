@@ -466,7 +466,7 @@ class IposEmployeesTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposEmployees')->insert($row);
+			\DB::table('IposEmployees')->insert($row);
 		}
 	}
 }

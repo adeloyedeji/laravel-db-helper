@@ -39,7 +39,7 @@ class SupermarketsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Supermarkets')->insert($row);
+			\DB::table('Supermarkets')->insert($row);
 		}
 	}
 }

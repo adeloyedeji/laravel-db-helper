@@ -51,7 +51,7 @@ class FooterLocationsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('FooterLocations')->insert($row);
+			\DB::table('FooterLocations')->insert($row);
 		}
 	}
 }

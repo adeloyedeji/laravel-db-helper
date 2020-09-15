@@ -111,7 +111,7 @@ class PillremindersTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Pillreminders')->insert($row);
+			\DB::table('Pillreminders')->insert($row);
 		}
 	}
 }

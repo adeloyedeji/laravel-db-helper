@@ -50,7 +50,7 @@ class GeneraldetailsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Generaldetails')->insert($row);
+			\DB::table('Generaldetails')->insert($row);
 		}
 	}
 }

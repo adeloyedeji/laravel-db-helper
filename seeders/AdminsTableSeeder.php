@@ -47,7 +47,7 @@ class AdminsTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('Admins')->insert($row);
+			\DB::table('Admins')->insert($row);
 		}
 	}
 }

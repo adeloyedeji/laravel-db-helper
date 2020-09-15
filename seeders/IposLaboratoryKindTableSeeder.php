@@ -25,7 +25,7 @@ class IposLaboratoryKindTableSeeder extends Seeder
 
 		];
 		foreach ($rows as $row) {
-			DB::table('IposLaboratoryKind')->insert($row);
+			\DB::table('IposLaboratoryKind')->insert($row);
 		}
 	}
 }
