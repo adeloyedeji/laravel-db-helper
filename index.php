@@ -275,6 +275,8 @@ if (count($result) > 0)
                                 $columnString .= "->binary('{$field}')";
                             }elseif(strpos($type,"date") !== false) {
                                 $columnString .= "->date('{$field}')";
+                            }elseif(strpos($type,"year") !== false) {
+                                $columnString .= "->year('{$field}')";
                             }elseif(strpos($type,"decimal") !== false) {
                                 $columnString .= "->decimal('{$field}')";
                             }else {
