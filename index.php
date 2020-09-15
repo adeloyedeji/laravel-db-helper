@@ -127,9 +127,11 @@ if (count($result) > 0)
         $dir = $path . "/seeders";
         mkdir($dir, 0777, true);
 
+        $baseSeederName = "DatabaseSeeder";
+        $baseSeederContent = "";
         foreach ($result as $table)
         {
-            
+     
             foreach($table as $key => $tableName)
             {
             
@@ -161,7 +163,8 @@ if (count($result) > 0)
                     if($content != "")$content = $obj->writeSeederProperties($tableName,$content,$className);
                     if (file_put_contents($dir."/".$className."TableSeeder.php", $content) !== false)
                     {
-                        echo "Seeders: ".$tableName. "TableSeeder was successfully created.\n";
+                        $baseSeederContent .= "\t\t\$this->call({$className}TableSeeder::class);\n";
+                        echo "Seeders: ".$className. "TableSeeder was successfully created.\n";
                     }
                     else 
                     {
@@ -169,7 +172,18 @@ if (count($result) > 0)
                     }             
                 }
             }
+          
         }
+        $file = $obj->writeDatabaseSeederFile($baseSeederContent,$baseSeederName);
+        if (file_put_contents($dir."/".$baseSeederName.".php", $file) !== false)
+                    {
+                       
+                        echo "Seeders: ".$baseSeederName. " was successfully created.\n";
+                    }
+                    else 
+                    {
+                        echo "Unable to create model: $laravelModelName.\n";
+                    }     
     }
 
     if($val['m'] == "igrations") {

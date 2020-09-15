@@ -77,13 +77,25 @@ class DbManager {
         $properties .= "namespace Database\Seeders;\n\n";
         $properties .= "use Illuminate\Database\Seeder;\n\n";
         $properties .= "class ".$className."TableSeeder extends Seeder\n{\n";
-        $properties .= "\tpublic function run()\n{\n";
+        $properties .= "\tpublic function run()\n\t{\n";
         $properties .= "\t\t\$rows = [\t";
         $properties .= $content."\n";
         $properties .= "\t\t];\n";
         $properties .= "\t\tforeach (\$rows as \$row) {\n";
         $properties .= "\t\t\t\\DB::table('".$tableName."')->insert(\$row);\n";
         $properties .= "\t\t}\n\t}\n}";
+        return $properties;
+
+    }
+
+    public function writeDatabaseSeederFile(string $content,string $className) {
+        $properties = "<?php\n\n";
+        $properties .= "namespace Database\Seeders;\n\n";
+        $properties .= "use Illuminate\Database\Seeder;\n\n";
+        $properties .= "class ".$className." extends Seeder\n{\n";
+        $properties .= "\tpublic function run()\n\t{\n";
+        $properties .= $content."\n";
+        $properties .= "\t}\n}";
         return $properties;
 
     }
