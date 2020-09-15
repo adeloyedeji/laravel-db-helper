@@ -135,7 +135,7 @@ if (count($result) > 0)
             
                 $columns = $obj->getColumnsInTable($tableName);
                 $tableData = $obj->getTableData($tableName);
-                $tableName =  str_replace(" ", "", ucwords(str_replace("_", " ", $tableName)));
+                $className =  str_replace(" ", "", ucwords(str_replace("_", " ", $tableName)));
 
                 if (count($columns) > 0)
                 {
@@ -158,8 +158,8 @@ if (count($result) > 0)
                     
                     
                     }  
-                    if($content != "")$content = $obj->writeSeederProperties($tableName,$content);
-                    if (file_put_contents($dir."/".$tableName."TableSeeder.php", $content) !== false)
+                    if($content != "")$content = $obj->writeSeederProperties($tableName,$content,$className);
+                    if (file_put_contents($dir."/".$className."TableSeeder.php", $content) !== false)
                     {
                         echo "Seeders: ".$tableName. "TableSeeder was successfully created.\n";
                     }
