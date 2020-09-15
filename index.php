@@ -135,6 +135,8 @@ if (count($result) > 0)
             
                 $columns = $obj->getColumnsInTable($tableName);
                 $tableData = $obj->getTableData($tableName);
+                $tableName =  str_replace(" ", "", ucwords(str_replace("_", " ", $tableName)));
+
                 if (count($columns) > 0)
                 {
                     $columnField = array();
@@ -230,7 +232,7 @@ if (count($result) > 0)
                             $columnString .= "->id()";
                         }elseif($field == "created_at" || $field == "updated_at"){
                             if(!$hasTimeStamp){
-                                $columnString .= "->timestamp()";
+                                $columnString .= "->timestamps()";
                                 $hasTimeStamp =true;
                             }else {
                               

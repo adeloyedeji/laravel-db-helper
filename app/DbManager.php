@@ -74,6 +74,7 @@ class DbManager {
 
     public function writeSeederProperties(string $tableName, string $content) {
         $properties = "<?php\n\n";
+        $properties .= "namespace Database\Seeders;\n\n";
         $properties .= "use Illuminate\Database\Seeder;\n\n";
         $properties .= "class ".$tableName."TableSeeder extends Seeder\n{\n";
         $properties .= "\tpublic function run()\n{\n";
